@@ -47,7 +47,7 @@ class SyslogServer extends EventEmitter {
         });
 
         this.server.on('error', (error) => {
-            console.log('Error: ' + error);
+            this.emit("error", error);
         });
     }
 
