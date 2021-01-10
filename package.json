@@ -1,0 +1,22 @@
+{
+  "name": "syslog-stasher",
+  "version": "1.0.2",
+  "description": "Server to receive and stash Syslog messages",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoX1337/syslog-stasher.git"
+  },
+  "author": "gox1337",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GoX1337/syslog-stasher/issues"
+  },
+  "homepage": "https://github.com/GoX1337/syslog-stasher#readme",
+  "dependencies": {
+    "glossy": "^0.1.7",
+    "net": "^1.0.2"
+  }
+}
