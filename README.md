@@ -11,7 +11,7 @@ const options = {
 
 const syslogServer = new SyslogStasher(options);
 
-syslogServer.on('data', (msg) => {
+syslogServer.on('msg', (msg) => {
     console.log('SYSLOG:', msg);
 });
 

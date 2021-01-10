@@ -6,7 +6,6 @@ class SyslogServer extends EventEmitter {
 
     constructor(options) {
         super();
-        console.log("Constructor", options);
         this.server = net.createServer();
         this.options = options;
         this.port = options.port || 514;
@@ -15,11 +14,10 @@ class SyslogServer extends EventEmitter {
         this.server.on('connection', (socket) => {
             socket.setEncoding('utf8');
             socket.on('data', (data) => {
-                this.emit("data", syslogParser.parse(data));
+                this.emit("msg", syslogParser.parse(data));
             });
 
             socket.on('drain', () => {
-                console.log('write buffer is empty now .. u can resume the writable stream');
                 socket.resume();
             });
 
@@ -28,7 +26,6 @@ class SyslogServer extends EventEmitter {
             });
 
             socket.on('timeout', () => {
-                console.log('Socket timed out !');
                 socket.end('Timed out!');
             });
 
