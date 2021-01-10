@@ -3,8 +3,7 @@
   "version": "1.0.5",
   "description": "Server to receive and stash Syslog messages",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GoX1337/syslog-stasher.git"
@@ -17,6 +16,7 @@
   "homepage": "https://github.com/GoX1337/syslog-stasher#readme",
   "dependencies": {
     "glossy": "^0.1.7",
+    "mongodb": "^3.6.3",
     "net": "^1.0.2"
   }
 }
