@@ -11,6 +11,14 @@ const options = {
 
 const syslogServer = new SyslogStasher(options);
 
+syslogServer.on('data', (msg) => {
+    console.log('SYSLOG:', msg);
+});
+
+syslogServer.on('error', (err) => {
+    console.error('SYSLOG:', err);
+});
+
 syslogServer.listen(() => {
     console.log(`Syslog server started listening on ${options.port}...`);
 });

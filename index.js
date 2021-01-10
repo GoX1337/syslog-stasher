@@ -1,9 +1,11 @@
 const net = require('net');
 const syslogParser = require('glossy').Parse;
+const { EventEmitter } = require ('events');
 
-class SyslogServer {
+class SyslogServer extends EventEmitter {
 
     constructor(options) {
+        super();
         console.log("Constructor", options);
         this.server = net.createServer();
         this.options = options;
@@ -13,7 +15,7 @@ class SyslogServer {
         this.server.on('connection', (socket) => {
             socket.setEncoding('utf8');
             socket.on('data', (data) => {
-                console.log("syslog:", syslogParser.parse(data));
+                this.emit("data", syslogParser.parse(data));
             });
 
             socket.on('drain', () => {
@@ -22,7 +24,7 @@ class SyslogServer {
             });
 
             socket.on('error', (error) => {
-                console.log('Error : ' + error);
+                this.emit("error", error);
             });
 
             socket.on('timeout', () => {
