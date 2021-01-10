@@ -1,6 +1,6 @@
 {
   "name": "syslog-stasher",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Server to receive and stash Syslog messages",
   "main": "index.js",
   "scripts": {

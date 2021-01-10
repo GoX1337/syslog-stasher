@@ -20,6 +20,6 @@ syslogServer.on('error', (err) => {
 });
 
 syslogServer.listen(() => {
-    console.log(`Syslog server started listening on ${options.port}...`);
+    console.log(`Syslog server listening on ${options.port}...`);
 });
 ```
