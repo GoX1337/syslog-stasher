@@ -1,4 +1,4 @@
-# Simple Syslog RFC5424 server
+# Simple Syslog RFC5424 TCP server
 
 ## Example:
 ```javascript
